@@ -1,0 +1,49 @@
+body {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: large;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+a {
+    font-family: fantasy;
+    font-size: larger;
+    color: blue;
+    text-decoration: wavy;
+    transition: color 0.1s;
+  }
+  
+  a:hover {
+    background-color: green;
+    color: blue;
+    opacity: .8;
+    box-shadow: 10px 6px 6px pink;
+    border-radius: 8px;
+  }
+
+button {
+    border-radius: 15px;
+    background-color: brown;
+    color: white;
+    cursor: pointer;
+    padding: 2px 10px;
+    margin: 10px;
+    transition: opacity .5s;
+    box-shadow: 5px 5px 5px gray;
+    
+}
+
+button:hover {
+    opacity: 0.8;
+    background-color: green;
+}
+
+button:active {
+    background-color: blue;
+}
+
+.start {
+    text-align: center;
+}
+
