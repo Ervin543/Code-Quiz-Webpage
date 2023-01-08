@@ -38,8 +38,12 @@ var questions = [
    },
 ];
 
-var questionsEl = document.querySelector('#questions')
+//-- These are the variables that I will be referencing in this JavaScript File--//
 
+var time = questions.length * 30;
+var timerId;
+var questionsEl = document.querySelector('#questions')
+var timerEl = document.getElementById('time');
 var questionOption = document.querySelector('#question-option')
 var choices = document.querySelector('#choices')
 var btn1 = document.querySelector('#btn1')
@@ -47,11 +51,11 @@ var btn2 = document.querySelector('#btn2')
 var btn3 = document.querySelector('#btn3')
 var btn4 = document.querySelector('#btn4')
 var startScreen = document.querySelector('#start-screen')
-
 var startBtn = document.querySelector('#start')
 var questionBtn = document.querySelectorAll('.options')
 var index = 1
 
+//-- This event listener starts the quiz when the user clicks on the "click here to start the quiz" Button --//
 startBtn.addEventListener('click', function () {
    questionOption.textContent = questions[0].numb
    btn1.innerHTML = questions[0].options[0]
@@ -61,11 +65,17 @@ startBtn.addEventListener('click', function () {
    questionsEl.style = "display:block"
    startScreen.style = "display:none"
 
+   timerId = setInterval(timeCounter, 1000);
+
+   timerEl.textContent = time;
+
    for (let i = 0; i < questionBtn.length; i++) {
       questionBtn[i].addEventListener('click', nextQuestion)
 
    }
 });
+
+//-- This function will cause the quiz to progress to the next question, and will end the quiz and take the user to the High Score HTML Page --//
 
 function nextQuestion() {
    // console.log(index)
@@ -86,3 +96,63 @@ function nextQuestion() {
    }
    //index++
 }
+
+
+//-- This function starts the timer and enables it to countdown --//
+
+function timeCounter() {
+   time--;
+   timerEl.textContent = time;
+
+   if (time <= 0) {
+      quizEnd();
+   }
+};
+
+
+
+
+
+
+function questionClick(event) {
+   var buttonEl = event.target;
+ 
+   // if the clicked element is not a choice button, do nothing.
+   if (!buttonEl.matches('.choice')) {
+     return;
+   }
+ 
+   // check if user guessed wrong
+   if (buttonEl.value !== questions[index].answer) {
+     // penalize time
+     time -= 15;
+ 
+     if (time < 0) {
+       time = 0;
+     }
+ 
+     // display new time on page
+     timerEl.textContent = time;
+ 
+    
+ 
+     //feedbackEl.textContent = 'Wrong!';
+   //} else {
+     
+ 
+     //feedbackEl.textContent = 'Correct!';
+   }
+ 
+   // flash right/wrong feedback on page for half a second
+   feedbackEl.setAttribute('class', 'feedback');
+   setTimeout(function () {
+     feedbackEl.setAttribute('class', 'feedback hide');
+   }, 1000);
+ 
+   
+ 
+   
+ }
+ 
+
+
