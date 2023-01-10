@@ -77,7 +77,8 @@ startBtn.addEventListener('click', function () {
 
 //-- This function will cause the quiz to progress to the next question, and will end the quiz and take the user to the High Score HTML Page --//
 
-function nextQuestion() {
+function nextQuestion(event) {
+   checkAns(event.target.innerText)
    // console.log(index)
    // console.log(questions.length)
    if (index < questions.length) {
@@ -91,8 +92,7 @@ function nextQuestion() {
       console.log(index)
    }
     else {
-       window.location = "./Score.html"
-      console.log ('????')
+     endQuiz ();
    }
    //index++
 }
@@ -105,7 +105,9 @@ function timeCounter() {
    timerEl.textContent = time;
 
    if (time <= 0) {
-      quizEnd();
+      clearInterval(timerId);
+      endQuiz ();
+      
    }
 };
 
@@ -114,45 +116,20 @@ function timeCounter() {
 
 
 
-function questionClick(event) {
-   var buttonEl = event.target;
- 
-   // if the clicked element is not a choice button, do nothing.
-   if (!buttonEl.matches('.choice')) {
-     return;
+//-- This function checks to see if the user chose the right/wrong answer, and deducts 10 seconds as a penalty for the wrong response --//
+
+function checkAns (answer) {
+   console.log (questions[index])
+   if (!answer || !questions[index]) {
+      return;
    }
- 
-   // check if user guessed wrong
-   if (buttonEl.value !== questions[index].answer) {
-     // penalize time
-     time -= 15;
- 
-     if (time < 0) {
-       time = 0;
-     }
- 
-     // display new time on page
-     timerEl.textContent = time;
- 
-    
- 
-     //feedbackEl.textContent = 'Wrong!';
-   //} else {
+   if (answer !== questions[index].answer) {
+      time -= 10;
+
      
- 
-     //feedbackEl.textContent = 'Correct!';
-   }
- 
-   // flash right/wrong feedback on page for half a second
-   feedbackEl.setAttribute('class', 'feedback');
-   setTimeout(function () {
-     feedbackEl.setAttribute('class', 'feedback hide');
-   }, 1000);
- 
-   
- 
-   
- }
- 
+}}
 
-
+function endQuiz () {
+   localStorage.setItem('score',time)
+   window.location = "./Score.html";
+}
