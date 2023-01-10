@@ -9,19 +9,33 @@ Finally, on the score.html page all previous users' score's and initial's will b
 
 Included below are Screenshots of various code and webpages that are associated with this Challenge.
 
-![This is the HTML for the Index]()
+![This is the HTML for the Index](Index(HTML).PNG)
 
-![This is the HTML for the Score page]()
+![This is the HTML for the Score page](Score(HTML).PNG)
 
-![This is the screenshot for the Logic Javascript 1]()
+![This is the screenshot for the Logic Javascript 1](Logic_Javascript_1.PNG)
 
-![This is the screenshot for the Logic Javascript 2]() 
+![This is the screenshot for the Logic Javascript 2](Logic_Javascript_2.PNG) 
 
-![This is the screenshot for the Score page Javascript]()
+![This is the screenshot for the Score page Javascript](Score_JavaScript.PNG)
 
-![This is the screenshot for the CSS]()
+![This is the screenshot for the CSS](CSS.PNG)
 
-![]()
+![This is the screenshot of the start of the webpage](HTML_1.PNG)
+
+![This is the screenshot of the first question](HTML_Question_1.PNG)
+
+![This is the screenshot of the second question](HTML_Question_2.PNG)
+
+![This is the screenshot of the third question](HTML_Question_3.PNG)
+
+![This is the screenshot of the fourth question](HTML_Question_4.PNG)
+
+![This is the screenshot of the fifth question](HTML_Question_5.PNG)
+
+![This is the screenshot of the sixth question](HTML_Question_6.PNG)
+
+![This is the screenshot of the score page](Score_page.PNG)
 
 # Links
 
