@@ -131,5 +131,5 @@ function checkAns (answer) {
 
 function endQuiz () {
    localStorage.setItem('score',time)
-   window.location = "./Score.html";
+   window.location = "./assets/score.html";
 }
