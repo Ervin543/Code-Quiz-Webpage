@@ -9,6 +9,19 @@ Finally, on the score.html page all previous users' score's and initial's will b
 
 Included below are Screenshots of various code and webpages that are associated with this Challenge.
 
+![This is the HTML for the Index]()
+
+![This is the HTML for the Score page]()
+
+![This is the screenshot for the Logic Javascript 1]()
+
+![This is the screenshot for the Logic Javascript 2]() 
+
+![This is the screenshot for the Score page Javascript]()
+
+![This is the screenshot for the CSS]()
+
+![]()
 
 # Links
 
