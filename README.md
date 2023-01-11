@@ -41,4 +41,4 @@ Included below are Screenshots of various code and webpages that are associated 
 
 This is the link to the repository that contains all the code for this challenge : https://github.com/Ervin543/Code-Quiz-Webpage
 
-This is the link that leads to the deployed webpage of this challenge : 
+This is the link that leads to the deployed webpage of this challenge : https://ervin543.github.io/Code-Quiz-Webpage/
